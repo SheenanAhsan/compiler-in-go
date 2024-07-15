@@ -40,8 +40,10 @@ var keywords = map[string]TokenType{
 }
 
 func LookupIdent(ident string) TokenType {
+	// if tokentype found, return tokentype
 	if tok, ok := keywords[ident]; ok {
 		return tok
 	}
+	// else, return default IDENT, ex) variable x
 	return IDENT
 }
